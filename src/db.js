@@ -11,13 +11,13 @@ db.exec(`
 `)
 
 db.exec(`
-    CREATE TABLE todos (
+    CREATE TABLE expenses (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER,
-        task TEXT,
-        completed BOOLEAN DEFAULT 0,
+        title TEXT,
+        amount REAL,
         FOREIGN KEY(user_id) REFERENCES users(id)
-    )    
+    )
 `)
 
 export default db

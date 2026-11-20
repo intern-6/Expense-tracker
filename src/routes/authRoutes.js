@@ -23,11 +23,12 @@ router.post('/register', async (req, res) => {
             }
         })
 
-        // now that we have a user, I want to add their first todo for them
-        const defaultTodo = `Hello :) Add your first todo!`
-        await prisma.Todo.create({
+        // now that we have a user, I want to add their first expense for them
+        const defaultExpense = `Hello :) Add your first expense!`
+        await prisma.expense.create({
             data: {
-                task : defaultTodo,
+                title : defaultExpense,
+                amount : 0,
                 userId : user.id
             }
         })
